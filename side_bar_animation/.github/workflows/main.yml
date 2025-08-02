@@ -38,7 +38,7 @@ jobs:
 
       - name: Build Android APK (release)
         run: flutter build apk --release --split-per-abi
-        working-directory: ./side_bar_animation
+        working-directory: SIDE_BAR_ANIMATION/side_bar_animation
 
       # iOS build only works on macOS runners; this step is skipped on Windows
       # Uncomment below and change runner to macos-latest if you want iOS build
