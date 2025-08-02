@@ -12,7 +12,7 @@ environment:
     sdk: flutter
 
  
-  flutter_zoom_drawer: 
+  flutter_zoom_drawer: ^3.2.0 
   flutter_animate: ^4.5.2
 
 
