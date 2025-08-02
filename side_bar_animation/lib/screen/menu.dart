@@ -6,16 +6,15 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.redAccent,
       body: ListTile(
         leading: const Icon(Icons.home, color: Colors.white),
         title: const Text('Home', style: TextStyle(color: Colors.white)),
-        onTap: (){
-ZoomDrawer.of(context)?.close();
+        onTap: () {
+          ZoomDrawer.of(context)?.close();
         },
-      )
-      
+      ),
     );
   }
 }
