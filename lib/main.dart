@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:side_bar_animation/screen/home.dart';
 import 'package:side_bar_animation/widget/zoom_drawer.dart';
 
 void main() {
