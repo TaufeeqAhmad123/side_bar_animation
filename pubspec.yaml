@@ -7,11 +7,9 @@ version: 1.0.0+1
 
 environment:
   sdk: ^3.9.0-333.0.dev
-
+dependencies:
   flutter:
     sdk: flutter
-
- 
   flutter_zoom_drawer: ^3.2.0 
   flutter_animate: ^4.5.2
 
