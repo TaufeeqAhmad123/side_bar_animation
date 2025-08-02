@@ -11,7 +11,7 @@ environment:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.8
+ 
   flutter_zoom_drawer: 
   flutter_animate: ^4.5.2
 
