@@ -10,7 +10,7 @@ class MenuScreen extends StatelessWidget {
       backgroundColor: Colors.redAccent,
       body: ListTile(
         leading: const Icon(Icons.home, color: Colors.white),
-        title: const Text('Home', style: TextStyle(color: Colors.white)),
+        title: const Text('Homes', style: TextStyle(color: Colors.white)),
         onTap: () {
           ZoomDrawer.of(context)?.close();
         },
