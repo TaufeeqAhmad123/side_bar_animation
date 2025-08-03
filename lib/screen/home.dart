@@ -13,115 +13,253 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: primaryColor2,
 
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Column(
-            children: [
-              topWidget(),
-              SizedBox(height: 20),
-              searchBar(),
-              SizedBox(height: 20),
-              Container(
-                height: 200,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.black54,
-                  borderRadius: BorderRadius.circular(16),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                topWidget(),
+                SizedBox(height: 20),
+                searchBar(),
+                SizedBox(height: 20),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF3F434C),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Row(children: [dealWidget(), dealIcon()]),
                 ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Special Deals',
-                            style: GoogleFonts.lato(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            '50% OFF',
-                            style: GoogleFonts.lato(
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            'and get free delivery',
-                            style: GoogleFonts.lato(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 10),
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.deepOrange,
-                            ),
-                            child: Text(
-                              'Order Now',
-                              style: GoogleFonts.lato(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ],
-                      ),
+                SizedBox(height: 20),
+                rowWidget(),
+                SizedBox(height: 20),
+                SizedBox(
+                  height: 250,
+                  width: double.infinity,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => SizedBox(width: 15),
+                   
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return Container(
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                    //Spacer(),
-                    Expanded(
-                      flex: 1,
-                      child: SizedBox(
-                        width: 140,
-                        height: 100,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              right: 0,
-                              child: SvgPicture.asset(
-                                'icon/profile.svg',
-                                width: 100,
-                                height: 100,
-                                                        placeholderBuilder: (context) => Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.3),
-                            borderRadius: BorderRadius.circular(8),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/image/sushi4.png',
+                          width: 150,
+                          height: 150,
+                        ),
+                        SizedBox(height: 6),
+                        Text(
+                          'Ebi Sushi',
+                          style: GoogleFonts.lato(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           ),
                         ),
-
+                        SizedBox(height: 6),
+                        Row(
+                          children: [
+                            Text('⭐ '),
+                            Text(
+                              '4.5',
+                              style: GoogleFonts.lato(
+                                fontSize: 18,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
-                            Positioned(
-                              right: 20,
-                              child: SvgPicture.asset(
-                                'icon/cup.svg',
-                                width: 100,
-                                height: 100,
+                            Text(
+                              ' (100 review)',
+                              style: GoogleFonts.lato(
+                                fontSize: 16,
+                                color: Colors.black54,
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    )
-                  ],
+                        Row(
+                          children: [
+                            Text(
+                              '\$ 12.99',
+                              style: GoogleFonts.lato(
+                                fontSize: 18,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Spacer(),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Container(
+                                padding: EdgeInsets.all(15),
+                  
+                                decoration: BoxDecoration(
+                                  color: Colors.deepOrange,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: SvgPicture.asset(
+                                  'icon/cup.svg',
+                                  width: 30,
+                                  height: 30,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                    }),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class rowWidget extends StatelessWidget {
+  const rowWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          'Popular Foods',
+          style: GoogleFonts.lato(
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        Spacer(),
+        Text(
+          'See All',
+          style: GoogleFonts.lato(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.black45,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class dealIcon extends StatelessWidget {
+  const dealIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 3,
+      child: SizedBox(
+        child: Stack(
+          children: [
+            Positioned(
+              right: 20,
+              bottom: 20,
+              child: Image.asset(
+                'assets/image/nigiri.png',
+                width: 100,
+                height: 80,
+              ),
+            ),
+            Positioned(
+              right: 20,
+              top: 0,
+              child: Image.asset(
+                'assets/image/sushi.png',
+                width: 80,
+                height: 100,
+              ),
+            ),
+            Positioned(
+              right: 110,
+              top: 40,
+              child: Image.asset(
+                'assets/image/salmon.png',
+                width: 80,
+                height: 80,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class dealWidget extends StatelessWidget {
+  const dealWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 3,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Special Deals',
+              style: GoogleFonts.lato(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              '50% OFF',
+              style: GoogleFonts.lato(
+                fontSize: 34,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'and get free delivery',
+              style: GoogleFonts.lato(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.deepOrange,
+              ),
+              child: Text(
+                'Order Now',
+                style: GoogleFonts.lato(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
         ),
       ),
     );
