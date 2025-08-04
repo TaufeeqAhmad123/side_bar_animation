@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:side_bar_animation/widget/bottom_nav_bar.dart';
 import 'package:side_bar_animation/widget/zoom_drawer.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ZoomDrawerScreen(),
+      home: BottomNavBar(),
     );
   }
 }

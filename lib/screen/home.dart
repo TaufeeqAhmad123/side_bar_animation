@@ -36,93 +36,98 @@ class HomeScreen extends StatelessWidget {
                 rowWidget(),
                 SizedBox(height: 20),
                 SizedBox(
-                  height: 250,
+                  height: 300,
                   width: double.infinity,
                   child: ListView.separated(
                     separatorBuilder: (context, index) => SizedBox(width: 15),
-                   
+
                     scrollDirection: Axis.horizontal,
-                    itemCount: 5,
+                    itemCount: 7,
                     itemBuilder: (context, index) {
                       return Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          'assets/image/sushi4.png',
-                          width: 150,
-                          height: 150,
+                        height: 150,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
                         ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Ebi Sushi',
-                          style: GoogleFonts.lato(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Row(
-                          children: [
-                            Text('⭐ '),
-                            Text(
-                              '4.5',
-                              style: GoogleFonts.lato(
-                                fontSize: 18,
-                                color: Colors.black54,
-                                fontWeight: FontWeight.w600,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                'assets/image/sushi${index + 1}.png',
+                                scale: 1,
+                                fit: BoxFit.cover,
+                                alignment: Alignment.topCenter,
                               ),
-                            ),
-                            Text(
-                              ' (100 review)',
-                              style: GoogleFonts.lato(
-                                fontSize: 16,
-                                color: Colors.black54,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              '\$ 12.99',
-                              style: GoogleFonts.lato(
-                                fontSize: 18,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Spacer(),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Container(
-                                padding: EdgeInsets.all(15),
-                  
-                                decoration: BoxDecoration(
-                                  color: Colors.deepOrange,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: SvgPicture.asset(
-                                  'icon/cup.svg',
-                                  width: 30,
-                                  height: 30,
+
+                              Text(
+                                'Ebi Sushi',
+                                style: GoogleFonts.lato(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
                                   color: Colors.black,
                                 ),
                               ),
-                            ),
-                          ],
+                              SizedBox(height: 6),
+                              Row(
+                                children: [
+                                  Text('⭐ '),
+                                  Text(
+                                    '4.5',
+                                    style: GoogleFonts.lato(
+                                      fontSize: 18,
+                                      color: Colors.black54,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Text(
+                                    ' (100 review)',
+                                    style: GoogleFonts.lato(
+                                      fontSize: 16,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    '\$ 12.99',
+                                    style: GoogleFonts.lato(
+                                      fontSize: 18,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Container(
+                                      padding: EdgeInsets.all(10),
+
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFEB6F63),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: SvgPicture.asset(
+                                        'icon/cart.svg',
+                                        width: 30,
+                                        height: 30,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
-                    ),
-                  );
-                    }),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
@@ -161,6 +166,8 @@ class rowWidget extends StatelessWidget {
     );
   }
 }
+
+
 
 class dealIcon extends StatelessWidget {
   const dealIcon({super.key});
@@ -247,7 +254,7 @@ class dealWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.deepOrange,
+                color: Color(0xFFEB6F63),
               ),
               child: Text(
                 'Order Now',
