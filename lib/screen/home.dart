@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+
       child: Scaffold(
         backgroundColor: primaryColor2,
 
@@ -329,7 +330,11 @@ class topWidget extends StatelessWidget {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: primaryColor,
-        child: Icon(Icons.home, color: Colors.black),
+        child: Image.asset(
+          'icon/man.png',
+          width: 40,
+          height: 40,
+        ),
       ),
       title: Text(
         'Hi Nana 🖐️',
